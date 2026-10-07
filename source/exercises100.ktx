@@ -47,7 +47,7 @@ How to get the documentation of the numpy add function from the command line? (�
 hint: np.info
 
 < a5
-%run `python -c "import numpy; numpy.info(numpy.add)"`
+!python -c "import numpy; numpy.info(numpy.add)"
 
 < q6
 Create a null vector of size 10 but the fifth value which is 1 (★☆☆)
@@ -633,11 +633,11 @@ Create a structured array representing a position (x,y) and a color (r,g,b) (★
 hint: dtype
 
 < a51
-Z = np.zeros(10, [ ('position', [ ('x', float, 1),
-                                  ('y', float, 1)]),
-                   ('color',    [ ('r', float, 1),
-                                  ('g', float, 1),
-                                  ('b', float, 1)])])
+Z = np.zeros(10, [ ('position', [ ('x', float),
+                                  ('y', float)]),
+                   ('color',    [ ('r', float),
+                                  ('g', float),
+                                  ('b', float)])])
 print(Z)
 
 < q52
@@ -1444,7 +1444,7 @@ x = np.random.rand(int(5e7))
 %timeit np.einsum('i,i,i->i',x,x,x)
 
 < q93
-Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A that contain elements of each row of B regardless of the order of the elements in B? (★★★)
+Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A that contain at least one element of each row of B regardless of the order of the elements in B?
 
 < h93
 hint: np.where

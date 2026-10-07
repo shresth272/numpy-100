@@ -46,7 +46,7 @@ print("%d bytes" % Z.nbytes)
 
 
 ```python
-%run `python -c "import numpy; numpy.info(numpy.add)"`
+!python -c "import numpy; numpy.info(numpy.add)"
 ```
 #### 6. Create a null vector of size 10 but the fifth value which is 1 (★☆☆)
 
@@ -494,11 +494,11 @@ print(Z[index])
 
 
 ```python
-Z = np.zeros(10, [ ('position', [ ('x', float, 1),
-                                  ('y', float, 1)]),
-                   ('color',    [ ('r', float, 1),
-                                  ('g', float, 1),
-                                  ('b', float, 1)])])
+Z = np.zeros(10, [ ('position', [ ('x', float),
+                                  ('y', float)]),
+                   ('color',    [ ('r', float),
+                                  ('g', float),
+                                  ('b', float)])])
 print(Z)
 ```
 #### 52. Consider a random vector with shape (100,2) representing coordinates, find point by point distances (★★☆)
@@ -1181,7 +1181,7 @@ x = np.random.rand(int(5e7))
 %timeit x*x*x
 %timeit np.einsum('i,i,i->i',x,x,x)
 ```
-#### 93. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A that contain elements of each row of B regardless of the order of the elements in B? (★★★)
+#### 93. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A that contain at least one element of each row of B regardless of the order of the elements in B?
 
 
 ```python
